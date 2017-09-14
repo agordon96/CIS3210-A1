@@ -45,10 +45,11 @@ int main(int argc, char *argv[]) {
 	connectSocket = accept(sock, (struct sockaddr*)&dest, &socksize);
 	while(connectSocket) {
 		printf("Incoming connection from %s \n", inet_ntoa(dest.sin_addr));
-		len = recv(connectSocket, buffer, 512, 0);
+		len = recv(connectSocket, buffer, 500, 0);
+		buffer[len] = '\0';
 		printf("%s\n%d bytes\n", buffer, len);
 
-		send(connectSocket, "File finished sending", strlen(buffer), 0); 
+		send(connectSocket, "File finished sending", 22, 0);
 		close(connectSocket);
 		connectSocket = accept(sock, (struct sockaddr *)&dest, &socksize);
 	}

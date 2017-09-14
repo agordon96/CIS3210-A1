@@ -10,7 +10,6 @@
 //time.h was included before but I removed it since it's not part of the main code
 int main(int argc, char *argv[]) {
 	char address[256];
-	char line[128];
 	char portStr[16];
 	char *token;
 	FILE *file;
@@ -32,6 +31,7 @@ int main(int argc, char *argv[]) {
 	}
 
 	char buffer[argLen + 1];
+	char line[argLen + 1];
 
 	token = strtok(argv[1], ":");
 	if(!token) {
@@ -82,14 +82,15 @@ int main(int argc, char *argv[]) {
 	}
 
 	connect(sock, (struct sockaddr *)&dest, sizeof(struct sockaddr_in));
-	while(fgets(line, argLen, file)) {
-		send(sock, line, strlen(line), 0);
-	}
+	fread(line, argLen, 1, file);
+	line[argLen] = '\0';
+	send(sock, line, strlen(line), 0);
 
-	len = recv(sock, buffer, 513, 0);
+	len = recv(sock, buffer, argLen, 0);
 	buffer[len] = '\0';
 	printf("%s (%d bytes)\n", buffer, len);
 
 	close(sock);
+	fclose(file);
 	return 0;
 }
