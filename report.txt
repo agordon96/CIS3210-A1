@@ -1,0 +1,27 @@
+AARON GORDON 0884023
+FILE.TXT HAS ALWAYS BEEN 21 BYTES AND RATES WILL GO AS SUCH
+MAX AND MIN FOR TRANSFER RATES ARE FOR THE MAX LENGTH OF TRANSFER NOT SPEED
+
+Same Machine
+- 0.012ms min/0.019ms avg/0.028ms max/0.006ms stddev/0% packet loss
+- 127.0.0.1 0.006ms
+- File Transfer: 0.057ms min/0.082ms max/0.065ms avg (lot of variation)
+- Transfer Rates: 368KB/s min, 256KB/s max, 323KB/s
+
+Home to Guelph
+- 
+
+School Wired
+- 0.015ms min/0.019ms avg/0.034ms max/0.006ms stddev/0% packet loss
+- 131.104.139.129 <1ms
+ -> cj-dj.net.uoguelph.ca <1ms
+ -> da-cj.net.uoguelph.ca <1ms
+ -> gradray-08.cis.uoguelph.ca <1ms
+- File Transfer: 0.060ms min/0.066 max/0.062 avg
+- Transfer Rates: 350KB/s min, 318KB/s max, 339KB/s avg
+
+School Wireless (Not able to use linux so whole numbers were used)
+- 1ms min/8ms avg/61ms max//0% packet loss
+- 10.11.208.1 13ms
+ -> da-ca.net.uoguelph.ca 2ms
+ -> hermon.cis.uoguelph.ca 1ms
