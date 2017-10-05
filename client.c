@@ -7,8 +7,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <netdb.h>
-#include <time.h>
-
+//time.h was included before but I removed it since it's not part of the main code
 int main(int argc, char *argv[]) {
 	char address[256];
 	char line[128];
@@ -22,7 +21,6 @@ int main(int argc, char *argv[]) {
 	struct addrinfo hints;
 	struct addrinfo *info;
 	struct sockaddr_in dest;
-	clock_t t;
 
 	if(argc < 2 || argc > 3) {
 		printf("Format for client connection is ./client [[IP ADDRESS]]:[[PORT NUMBER]] [[OPTIONAL CLIENT BUFFER SIZE]].\n");
@@ -84,17 +82,11 @@ int main(int argc, char *argv[]) {
 	}
 
 	connect(sock, (struct sockaddr *)&dest, sizeof(struct sockaddr_in));
-	t = clock();
-
 	while(fgets(line, argLen, file)) {
 		send(sock, line, strlen(line), 0);
 	}
 
 	len = recv(sock, buffer, 513, 0);
-
-	t = clock() - t;
-	printf("This transfer took %f ms to execute\n", (((double)t) / CLOCKS_PER_SEC) * 1000);
-
 	buffer[len] = '\0';
 	printf("%s (%d bytes)\n", buffer, len);
 

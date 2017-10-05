@@ -1,6 +1,7 @@
 AARON GORDON 0884023
 FILE.TXT HAS ALWAYS BEEN 21 BYTES AND RATES WILL GO AS SUCH
 MAX AND MIN FOR TRANSFER RATES ARE FOR THE MAX LENGTH OF TRANSFER NOT SPEED
+CLOCK INCLUDES RUNTIME SO TRANSFER RATES ARE A LITTLE SKEWED
 
 Same Machine
 - 0.012ms min/0.019ms avg/0.028ms max/0.006ms stddev/0% packet loss
@@ -9,7 +10,11 @@ Same Machine
 - Transfer Rates: 368KB/s min, 256KB/s max, 323KB/s
 
 Home to Guelph
-- 
+- 12.696ms min/14.122ms avg/15.339ms max/0.845ms stddev/0% packet loss
+- 10.0.2.2 0.209 ms
+ -> 29 steps of * * * and traceroute finishes
+- File Transfer: 26.1ms min/37.5ms max/29.1ms avg
+- Transfer Rates: 800B/s min, 560B/s max, 721B/s avg
 
 School Wired
 - 0.015ms min/0.019ms avg/0.034ms max/0.006ms stddev/0% packet loss
@@ -21,7 +26,9 @@ School Wired
 - Transfer Rates: 350KB/s min, 318KB/s max, 339KB/s avg
 
 School Wireless (Not able to use linux so whole numbers were used)
-- 1ms min/8ms avg/61ms max//0% packet loss
+- 1ms min/8ms avg/61ms max/no stddev found/0% packet loss
 - 10.11.208.1 13ms
  -> da-ca.net.uoguelph.ca 2ms
  -> hermon.cis.uoguelph.ca 1ms
+- File Transfer: 3.25ms min/3.71ms max/3.44ms avg
+- Transfer Rates: 6.5KB/s min, 5.7KB/s max, 6.1KB/s avg
